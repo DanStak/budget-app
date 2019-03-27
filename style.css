@@ -1,0 +1,452 @@
+:root{
+  --mainBgColor: rgb(105, 150, 111);
+  --mainLiteralColor: #333333;
+  --mainLiteralColorShadowed: #222222;
+  --placeholder: rgba(255, 255, 255, 0.596);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round', sans-serif;
+
+}
+
+body{
+  color: var(--mainLiteralColor);
+}
+
+/* header---------------------------------- */
+
+header{
+  height: 10vh;
+  background-color: var(--mainBgColor);
+  color: var(--mainLiteralColor); 
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__firstMoney{
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
+
+.header__firstMoney span i{
+  display: inline-block
+}
+
+.header__firstMoney span p{
+  display: inline-block
+}
+
+.header__motive{
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.stats{
+  flex-basis: 20vw;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.stats i{
+  font-size: 1.5rem;
+}
+
+.stats p{
+  display: inline-block;
+}
+
+.stats .stats__income{
+  color: rgb(39, 87, 20);
+}
+
+.stats .stats__expense{
+  color: rgb(160, 48, 48);
+}
+
+.stats .stats__equal{
+  color: rgb(39, 87, 20);
+}
+
+.hide{
+  display: none;
+}
+
+/* main and aside---------------------------- */
+
+.flex{
+  display: flex;
+  min-height: 90vh;
+
+}
+
+/* aside ----------------------------------- */
+
+
+.aside{
+  text-align: center;
+  padding: 10px 10px 0 10px;
+  box-sizing: border-box;
+}
+
+.left{
+  flex-basis: 25vh;
+  background-color: var(--mainBgColor);
+}
+
+.right{
+  flex-basis: 40vh;
+  /* border-left: 2px solid var(--mainLiteralColor); */
+}
+
+.aside__option{
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--mainLiteralColorShadowed);
+  color: var(--mainLiteralColorShadowed);
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.aside__option:hover{
+  background-color: var(--mainLiteralColor);
+  color: white;
+}
+
+.aside__h2{
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.aside__list .walletButton,
+.aside__list .categoryButton{
+  width: 100%;
+  padding: 5px 0;
+  background-color: transparent;
+  border: 2px solid var(--mainLiteralColorShadowed);
+  color: var(--mainLiteralColorShadowed);
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.aside__list .walletButton:hover,
+.aside__list .categoryButton:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.categoryList__ul{
+  background-color: rgba(255, 255, 255, 0.212);
+  margin-top: 5px;
+  display: none;
+}
+
+.walletList__ul{
+  display: none;
+}
+
+.walletList__ul > li button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px 0;
+  background-color: rgba(255, 255, 255, 0.74);
+  border: none;
+  color: var(--mainLiteralColorShadowed);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.walletList__ul > li button:hover{
+  background-color: white;
+}
+
+.categoryList__ul > li{
+  /* box-sizing: border-box; */
+  padding: 10px 0 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--mainLiteralColorShadowed);
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoryList__ul > li .category__delete{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+.categoryList__ul > li span{
+  margin-left: 5px;
+}
+
+.dark{
+  border: 1px solid white;
+  color: white;
+}
+
+.show{
+  display: block;
+}
+
+
+/* main------------------------------------- */
+
+main{
+  flex-grow: 1;
+}
+
+.main__h2{
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.main__ul{
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.main__li{
+  color: rgba(255, 255, 255, 0.74);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 8px 0; */
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+span.date{
+  flex-basis: 20%;
+  text-align: center;
+  overflow: hidden;
+}
+
+span.category{
+  flex-basis: 15%;
+  overflow: hidden;
+
+}
+
+span.amount{
+  flex-basis: 15%;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+span.name{
+  flex-grow: 1;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.li__button{
+  border: none;
+  height: 100%;
+  flex-basis: 2rem;
+  /* border-radius: 100px; */
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: .2s;
+}
+
+.li__button--edit{
+  background-color: transparent;
+}
+
+.li__button--edit:hover{
+  background-color: rgb(255, 255, 255);
+}
+
+
+.li__button--delete{
+  background-color: transparent;
+}
+
+.li__button--delete:hover{
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
+/* popups (addTransaction and addCategory------------------------------------- */
+
+.modalWrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.904);
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.modalWrapper__container{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  background-color: var(--mainBgColor);
+  box-sizing: border-box;
+}
+
+.modalWrapper__container h1{
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+.modalWrapper__form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modalWrapper__form input{
+  width: 70%;
+  margin: 20px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  color: var(--mainLiteralColor);
+  font-size: 1.5rem;
+}
+
+.modalWrapper__form input::placeholder{
+  color: var(--placeholder);
+  font-size: 1rem;
+}
+
+.modalWrapper__form select{
+  width: 70%;
+  height: 30px;
+  margin: 20px 0;
+  font-size: 1rem;
+  color: var(--mainLiteralColor);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--mainLiteralColor);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modalWrapper__form .checkbox{
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.modalWrapper__form .checkbox input{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.modalWrapper__form button{
+  color: var(--mainLiteralColor);
+  background-color: transparent;
+  border: 2px solid var(--mainLiteralColor);
+  padding: 8px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* first money form */
+.modalWrapper--firstMoney{
+  background-color: var(--mainBgColor);
+}
+
+.firstMoney__wrapper{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.firstMoney__wrapper h1{
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+
+.firstMoney__wrapper form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firstMoney__wrapper form input{
+  width: 300px;
+  margin-bottom: 50px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--mainLiteralColor);
+  color: var(--mainLiteralColor);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.firstMoney__wrapper form input::placeholder{
+  color: rgba(255, 255, 255, 0.596);
+  font-size: 1.2rem;
+}
+
+.firstMoney__wrapper form button{
+  color: var(--mainLiteralColor);
+  background-color: transparent;
+  border: 2px solid var(--mainLiteralColor);
+  padding: 8px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.firstMoney__wrapper form button:hover{
+  transform: scale(1.1);
+}

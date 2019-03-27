@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zaplanuj budżet</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&amp;subset=latin-ext" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+
+    <div class='header__firstMoney'>
+      <span >
+        <i class="fas fa-hand-holding-usd"></i>
+        <p class='stats__firstMoney'></p>
+      </span>
+    </div>
+
+    <div class='stats'>
+      <span >
+      <i class="fas fa-arrow-up"></i>
+      <p class='stats__income'></p>
+    </span>
+    </div>
+
+    <div class='stats'>
+      <span>
+      <i class="fas fa-arrow-down"></i>
+      <p class='stats__expense'></p>
+    </span>
+    </div>
+
+    <div class='stats'>
+      <span>
+      <i class="fas fa-balance-scale"></i>
+      <p class='stats__equal'>0</p>
+    </span>
+    </div>
+
+    <div class='header__motive'>
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon hide"></i>
+    </div>
+
+  </header>
+
+  <div class='flex'>
+
+    <aside class='aside left'>
+
+      <h2 class='aside__h2'>opcje</h2>
+
+
+      <button class='aside__option aside__option--operation'>
+        nowa operacja
+        <i class="fas fa-plus-circle"></i>
+      </button>
+
+      <button class='aside__option aside__option--wallet'>
+        nowy portfel
+        <i class="fas fa-wallet"></i>
+      </button>
+
+      <button class='aside__option aside__option--category'>
+        nowa kategoria
+        <i class="fas fa-th-list"></i>
+      </button>
+
+      <div class='aside__list aside__list--wallet'>
+        <button class='walletButton'>lista portfeli <i class="fas fa-caret-down"></i></button>
+        <ul class='walletList__ul'>
+          <!-- <li>portfel 1</li>
+          <li>portfel 1</li>
+          <li>portfel 1</li> -->
+        </ul>
+      </div>
+
+      <div class='aside__list aside__list--category'>
+        <button class='categoryButton'>lista kategorii <i class="fas fa-caret-down"></i></button>
+        <ul class='categoryList__ul'>
+
+        </ul>
+      </div>
+
+    </aside>
+
+    <main>
+
+      <h2 class='main__h2'>Lista operacji</h2>
+      <ul class='main__ul'>
+        <!-- <li class='main__li'>
+          <button class='li__button li__button--delete'><i class="fas fa-times"></i></button>
+          <span>nazwa operacji</span>
+          <span>100zł</span>
+          <span>12-03.2019</span>
+          <span>category</span>
+          <button class='li__button li__button--edit'><i class="fas fa-edit"></i></button>
+        </li>-->
+      </ul>
+
+    </main>
+
+    <aside class='aside right'>
+      <h2 class='aside__h2'>statystyki</h2>
+      <canvas id='myChart1' height="270" width='300'></canvas>
+      <canvas id='myChart2' height="270" width='300'></canvas>
+    </aside>
+
+  </div>
+
+  <section class='modalWrapper modalWrapper--wallet'>
+
+    <div class='modalWrapper__container'>
+      <h1>Dodawanie portfela</h1>
+
+      <form class="modalWrapper__form modalWrapper__form--wallet">
+
+        <input class='walletName' type='text' placeholder="nazwa portfela">
+        <input class='walletAmount' type='number' placeholder="kwota początkowa">
+        <button class='modalWrapper__add'>dodaj</button>
+
+      </form>
+    </div>
+  </section>
+
+  <section class='modalWrapper modalWrapper--transaction'>
+
+    <div class='modalWrapper__container'>
+      <h1>Dodawanie operacji</h1>
+
+      <form class="modalWrapper__form modalWrapper__form--transaction">
+        <input class='operationName' type='text' placeholder="tytuł operacji">
+        <input class='operationAmount' type='number' step="0.01" placeholder="kwota operacji">
+        <select class='operationCategory'>
+
+        </select>
+        <input class='operationDate' type='date'>
+
+        <div class='checkbox'>
+          <input class='plus' type="checkbox">
+          <label>przychód</label>
+        </div>
+
+        <button class='modalWrapper__add modalWrapper__add--transaction'>dodaj</button>
+      </form>
+    </div>
+  </section>
+
+  <section class='modalWrapper modalWrapper--category'>
+
+    <div class='modalWrapper__container'>
+      <h1>Dodawanie kategorii</h1>
+
+      <form class="modalWrapper__form modalWrapper__form--category">
+        <input class='categoryName' type='text' placeholder="nazwa kategorii">
+        <button class='modalWrapper__add'>dodaj</button>
+      </form>
+    </div>
+
+  </section>
+
+  <section class='modalWrapper modalWrapper--firstMoney active'>
+    <div class='firstMoney__wrapper'>
+      <h1>Podaj dane portfela</h1>
+      <form class='modalWrapper__form--firstMoney'>
+        <input placeholder="saldo początkowe" class='firstMoney__input' step="0.01" type='number'>
+        <input placeholder="nazwa portfela" class='firstName__input' type='text'>
+        <button>dodaj</button>
+      </form>
+    </div>
+  </section>
+
+
+  <footer>
+
+  </footer>
+
+  <script src='js/click.js'></script>
+  <script src='js/App.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</body>
+
+</html>
