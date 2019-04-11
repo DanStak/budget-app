@@ -1,8 +1,8 @@
 # budget-app
 
-##This is an budget app wrote in **JavaScript** based on **OOP**.
+## This is an budget app wrote in **JavaScript** based on **OOP**.
 
-######Features
+###### Features
 ```
 -add transactions
 -add wallets, each wallet has his own history of transactions, you can switch between wallets
