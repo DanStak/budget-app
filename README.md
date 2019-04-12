@@ -1,6 +1,6 @@
 # budget-app
 
-## This is an budget app wrote in **JavaScript** based on **OOP**.
+## This is an budget app wrote in **JavaScript** based on **OOP** and using js library [Chart.js](https://www.chartjs.org/).
 
 ###### Features
 ```
