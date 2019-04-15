@@ -139,7 +139,7 @@
 
       <form class="modalWrapper__form modalWrapper__form--transaction">
         <input class='operationName' type='text' placeholder="tytuł operacji">
-        <input class='operationAmount' type='number' step="0.01" placeholder="kwota operacji">
+        <input class='operationAmount' type='number' step="0.01" min="0.01" placeholder="kwota operacji">
         <select class='operationCategory'>
 
         </select>
@@ -172,7 +172,7 @@
     <div class='firstMoney__wrapper'>
       <h1>Podaj dane portfela</h1>
       <form class='modalWrapper__form--firstMoney'>
-        <input placeholder="saldo początkowe" class='firstMoney__input' step="0.01" type='number'>
+        <input placeholder="saldo początkowe" class='firstMoney__input' step="0.01" min='0' type='number'>
         <input placeholder="nazwa portfela" class='firstName__input' type='text'>
         <button>dodaj</button>
       </form>

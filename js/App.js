@@ -95,7 +95,7 @@ class App {
 
     return color;
 
-  }
+  };
 
   showFirstMoney = () => {
     this.firstMoney.textContent = this.money;
@@ -598,6 +598,8 @@ firstMoneyForm.addEventListener('submit', (e) => {
       firstNameInput.value = '';
     } else alert('3)PORTFELE NIE MOGĄ NAZYWAĆ SIĘ TAK SAMO');
   } else alert('1)POLE NIE MOŻE BYĆ PUSTE 2)WARTOŚC MUSI BYĆ WIĘKSZA LUB RÓWNA 0');
+
+
 })
 
 //add transaction
