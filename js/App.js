@@ -85,7 +85,7 @@ class App {
 
   }
 
-  randomColor = () => {
+  randomColor() {
     const tab = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
     let color = '#';
@@ -97,7 +97,7 @@ class App {
 
   };
 
-  showFirstMoney = () => {
+  showFirstMoney() {
     this.firstMoney.textContent = this.money;
     this.calculateFinances();
 
@@ -153,9 +153,9 @@ class App {
     })
 
     this.randomColor();
-  }
+  };
 
-  addTransaction = () => {
+  addTransaction() {
 
     const title = this.operationName.value;
     const amount = this.operationAmount.value;
@@ -207,9 +207,9 @@ class App {
       this.isIncome.checked = false;
 
     }
-  }
+  };
 
-  calculateFinances = () => {
+  calculateFinances() {
     const fullMoney = parseFloat(this.money);
     const { expense, income } = this.expenseOrIncome();
     const restMoney = fullMoney + income - expense;
@@ -222,9 +222,9 @@ class App {
     } else this.equal.style.color = '#333333';
 
 
-  }
+  };
 
-  expenseOrIncome = () => {
+  expenseOrIncome() {
     let expense = 0;
     let income = 0;
 
@@ -251,9 +251,9 @@ class App {
     this.expense.textContent = expense.toFixed(2);
 
     return { expense, income };
-  }
+  };
 
-  addToMainUl = (stat) => {
+  addToMainUl(stat) {
     //destructuring
     const { id, title, income, amount, date, category } = stat
 
@@ -274,9 +274,9 @@ class App {
 
     //activate render function whitch is refreshing list
     this.renderList();
-  }
+  };
 
-  renderList = () => {
+  renderList() {
     this.mainUl.textContent = '';
 
     this.listOfTransactions.forEach((item, index) => {
@@ -284,9 +284,9 @@ class App {
       this.mainUl.prepend(item);
     });
 
-  }
+  };
 
-  removeTransaction = (li) => {
+  removeTransaction(li) {
     //remove from stats
     const id = parseInt(li.dataset.id);
     const chosedStat = this.stats.filter(item => item.id === id);
@@ -316,7 +316,7 @@ class App {
     this.calculateFinances();
   }
 
-  showEditTransaction = (li) => {
+  showEditTransaction(li) {
     // catch values
     const id = parseInt(li.dataset.id);
     const statObiect = this.stats.filter(item => item.id === id);
@@ -353,10 +353,10 @@ class App {
 
     //refresh informations about money in header
     this.calculateFinances();
-  }
+  };
 
   //FUNCTIONS TO MANAGE CHARTS
-  removeFromCharts = (chosedStat) => {
+  removeFromCharts(chosedStat) {
     //remove from charts--------------
     let indexExp;
     let indexInc;
@@ -394,9 +394,9 @@ class App {
       this.incomeCategories.splice(indexInc, 1);
       this.incomeValue.splice(indexInc, 1);
     }
-  }
+  };
 
-  makeChartData = (stat) => {
+  makeChartData(stat) {
     const lengthBeforeExp = this.expenseCategories.length;
     const lengthBeforeInc = this.incomeCategories.length;
 
@@ -445,9 +445,9 @@ class App {
 
 
     this.calculateChartValues();
-  }
+  };
 
-  calculateChartValues = () => {
+  calculateChartValues() {
     this.valuesToChartExpense = this.expenseValue.map(item => item.reduce((acc, curr) => {
       acc += parseFloat(curr);
       return acc;
@@ -457,9 +457,9 @@ class App {
       acc += parseFloat(curr);
       return acc;
     }, 0));
-  }
+  };
 
-  updateCharts = () => {
+  updateCharts() {
     // console.log(this.chart1);
     // console.log(this.chart2);
     //chart1
@@ -471,12 +471,12 @@ class App {
     this.chart2.data.datasets[0].data = this.valuesToChartIncome;
     this.chart2.data.labels = this.incomeCategories;
     this.chart2.update(this.chart2.config)
-  }
+  };
 
-  destroyCharts = () => {
+  destroyCharts() {
     this.chart1.destroy();
     this.chart2.destroy();
-  }
+  };
 
 }
 
@@ -496,7 +496,7 @@ class Categories {
     this.categories = ['jedzenie', 'rozrywka', 'samochód', 'dom', 'odzież', 'elektronika', 'zdrowie i uroda', 'dzieci', 'praca']
   }
 
-  renderCategoryList = () => {
+  renderCategoryList() {
     // clean lists before appending
     this.categoryUl.innerHTML = '';
     this.operationCategory.innerHTML = '';
@@ -517,9 +517,9 @@ class Categories {
       this.categoryUl.appendChild(li);
       this.operationCategory.appendChild(option);
     })
-  }
+  };
 
-  addCategory = () => {
+  addCategory() {
     if (this.categoryName.value !== '') {
       const categoryValue = this.categoryName.value;
       this.categories.push(categoryValue);
@@ -527,9 +527,9 @@ class Categories {
       this.categoryName.value = ''
     } else alert('nazwa kategorii nie może być pusta')
 
-  }
+  };
 
-  removeCategory = (li) => {
+  removeCategory(li) {
     // catching li key value
     const key = parseInt(li.dataset.key);
 
@@ -544,7 +544,7 @@ class Categories {
 
     //rendering list
     this.renderCategoryList();
-  }
+  };
 }
 
 
